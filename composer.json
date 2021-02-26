@@ -1,0 +1,17 @@
+{
+    "name": "hypercode/database_management",
+    "description": "Management connections and operations",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "JoaoGabrielOliveira",
+            "email": "joaog.conceicao@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "hypercode/database_connector": "dev-main",
+        "hypercode/database_operator": "dev-main"
+    }
+}
