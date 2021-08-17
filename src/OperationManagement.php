@@ -31,7 +31,7 @@ class OperationManagement
             case PostgreSQLConnection::class :
                 return new PostgreSQLOperations(ConnectionManagement::getDatabase());
             break;
-
+            
             case SQLiteOperations::class :
                 return new PostgreSQLOperations(ConnectionManagement::getDatabase());
             break;

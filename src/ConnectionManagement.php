@@ -11,7 +11,8 @@ use Hyper\Record\Operation\PostgreSQLOperations;
 class ConnectionManagement
 {
     private static Database $DATABASE;
-    private static DatabaseConnection $_driver;
+    private static DatabaseConnection $driver;
+    public static array $DriverList;
 
     public static function setDatabase($params)
     {
@@ -25,21 +26,13 @@ class ConnectionManagement
 
     public static function setDriver($params)
     {
-        switch($params['driver'])
-        {
-            case 'psql':
-                self::$_driver = new PostgreSQLConnection($params);
-            break;
-
-            case 'sqlite':
-                self::$_driver = new SQLiteConnection($params);
-            break;
-        }
+        self::$driver = self::$DriverList[$params['driver']];
+        self::$driver->setByParams($params);
     }
 
     public static function getDriver()
     {
-        return self::$_driver;
+        return self::$driver;
     }
 
     public static function getDatabase():Database

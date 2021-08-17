@@ -13,5 +13,20 @@
     "require": {
         "hypercode/database_connector": "dev-main",
         "hypercode/database_operator": "dev-main"
-    }
+    },
+    "autoload": {
+        "psr-4": {
+            "Hyper\\Record\\" :["src"]
+        }
+    },
+    "repositories": [
+        {
+            "type":"git",
+            "url": "git@github.com:JoaoGabrielOliveira/hyper_database_connector.git"
+        },
+        {
+            "type":"git",
+            "url": "git@github.com:JoaoGabrielOliveira/hyper_database_operator.git"
+        }
+    ]
 }
